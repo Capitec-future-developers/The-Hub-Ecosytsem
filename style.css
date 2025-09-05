@@ -1,8 +1,8 @@
 :root {
     --navy: #092365;
     --dark-red: #8B0000;
-    --white: #FFFFFF;
-    --light-gray: #F5F5F7;
+    --white: #ccc;
+    --light-gray: #FFFF;
     --dark-gray: #333333;
     --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
@@ -505,4 +505,71 @@ footer {
     .section-title h2 {
         font-size: 2rem;
     }
+}
+
+/* Popup overlay */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Popup box */
+.popup-content {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Close button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 22px;
+    cursor: pointer;
+    color: #333;
+}
+
+/* Form inputs */
+.popup-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.popup-content input,
+.popup-content button {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.popup-content button {
+    background: #6a1b9a;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.popup-content button:hover {
+    background: #4a148c;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: scale(0.9);}
+    to {opacity: 1; transform: scale(1);}
 }
